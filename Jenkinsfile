@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'pip install -r requirements.txt'
+        sh 'sudo pip install -r requirements.txt'
       }
     }
     stage('test') {
@@ -14,7 +14,7 @@ pipeline {
         always {
           junit 'test-reports/*.xml'
         }
-      }    
+      }
     }
   }
 }
